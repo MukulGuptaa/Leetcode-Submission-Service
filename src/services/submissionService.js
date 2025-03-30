@@ -10,13 +10,12 @@ class SubmissionService {
     }
 
     async addSubmission(submission) {
-        const submissionRes = this.submissionRepository.createSubmission(submission);
+        const submissionRes = await this.submissionRepository.createSubmission(submission); // This is coming as undefined.
         if(!submissionRes) {
             // TODO: Add error handling here
             throw {messgae: "Not able to create submission"};
         }
-        console.log(submissionRes);
-        const response = await SubmissionProducer(submissionRes);
+        const response = await SubmissionProducer(submission);
         return {queueResponse: response, submissionRes};
     }
 }
