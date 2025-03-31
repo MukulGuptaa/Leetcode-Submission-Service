@@ -15,6 +15,7 @@
     "dotenv": "^16.4.7",
     "fastify": "^5.2.2",
     "fastify-plugin": "^5.0.1",
+    "http-status-codes": "^2.3.0",
     "ioredis": "^5.6.0",
     "mongoose": "^8.13.1",
     "nodemon": "^3.1.9"
