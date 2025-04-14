@@ -3,7 +3,7 @@ const redisConnection = require('../config/redisConfig');
 const axios = require('axios');
 
 function evaluationWorker(queueName){
-    new Worker('EvaluationQueue', async (job) => {
+    new Worker(queueName, async (job) => {
         if(job.name == "EvaluationJob"){
 
             console.log("Evaluation job data: ", job.data)
